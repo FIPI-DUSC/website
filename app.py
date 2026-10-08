@@ -19,7 +19,7 @@ def render(html_str):
     st.markdown(cleaned_html, unsafe_allow_html=True)
 
 # ============================================================
-# PROFESSIONAL CSS WITH BACKGROUND WATERMARK IMAGE
+# HIGH CONTRAST CSS WITH DARKER BACKGROUND WATERMARK
 # ============================================================
 render("""
 <style>
@@ -41,10 +41,10 @@ render("""
         font-family: 'Inter', sans-serif;
     }
 
-    /* Background Watermark with Transparent Overlay */
+    /* Darker High-Contrast Background Watermark Overlay */
     .stApp {
         background: 
-            linear-gradient(rgba(241, 245, 249, 0.93), rgba(241, 245, 249, 0.93)),
+            linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)),
             url('https://raw.githubusercontent.com/FIPI-DUSC/website/main/images/du_gate.jpg');
         background-size: cover;
         background-position: center;
@@ -92,14 +92,14 @@ render("""
     /* SECTION HEADERS */
     .section-title {
         display: flex; align-items: center; gap: 12px; margin-top: 30px; margin-bottom: 10px;
-        padding-bottom: 10px; border-bottom: 2px solid var(--border-color);
+        padding-bottom: 10px; border-bottom: 2px solid rgba(255, 255, 255, 0.2);
     }
     .section-icon {
         width: 45px; height: 45px; border-radius: 8px; display: flex; align-items: center; justify-content: center;
         background: var(--navy); color: white; font-size: 1.3rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
-    .section-name { margin: 0; font-size: 1.6rem; font-weight: 800; color: var(--navy); text-transform: uppercase; letter-spacing: -0.5px;}
-    .section-desc { margin: 0 0 25px 0; color: var(--text-muted); font-size: 0.95rem; font-weight: 500;}
+    .section-name { margin: 0; font-size: 1.6rem; font-weight: 800; color: #FFFFFF; text-transform: uppercase; letter-spacing: -0.5px;}
+    .section-desc { margin: 0 0 25px 0; color: #CBD5E1; font-size: 0.95rem; font-weight: 500;}
 
     /* KPI CARDS */
     .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin: 15px 0 35px 0; }
@@ -172,13 +172,13 @@ render("""
 
     /* TABS */
     .stTabs [data-baseweb="tab-list"] {
-        gap: 10px; background: #E2E8F0; padding: 8px; border-radius: 8px; border: 1px solid var(--border-color);
+        gap: 10px; background: rgba(15, 23, 42, 0.8); padding: 8px; border-radius: 8px; border: 1px solid var(--border-color);
     }
     .stTabs [data-baseweb="tab"] {
         height: 48px; padding: 0 24px; border-radius: 6px; color: #0F172A !important; font-weight: 800; background: var(--white); border: 1px solid var(--border-color);
     }
     .stTabs [aria-selected="true"] {
-        background: var(--navy) !important; color: white !important; border-color: var(--navy);
+        background: var(--gold) !important; color: white !important; border-color: var(--gold);
     }
 
     /* FOOTER */
