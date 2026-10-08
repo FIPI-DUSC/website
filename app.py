@@ -1,5 +1,6 @@
 import streamlit as st
 import os
+import textwrap
 
 # ============================================================
 # PAGE CONFIGURATION
@@ -14,7 +15,7 @@ st.set_page_config(
 # ============================================================
 # CUSTOM CSS
 # ============================================================
-st.markdown(
+st.markdown(textwrap.dedent(
     """
     <style>
 
@@ -680,9 +681,8 @@ st.markdown(
     }
 
     </style>
-    """,
-    unsafe_allow_html=True,
-)
+    """
+), unsafe_allow_html=True)
 
 # ============================================================
 # HELPERS
@@ -699,7 +699,7 @@ def load_image(image_path, caption_text):
             use_container_width=True
         )
     else:
-        st.markdown(
+        st.markdown(textwrap.dedent(
             f"""
             <div class="info-card" style="text-align:center; padding:35px 20px;">
                 <div style="font-size:2rem;">📷</div>
@@ -710,35 +710,32 @@ def load_image(image_path, caption_text):
                     Add <code>{image_path}</code> to the GitHub repository.
                 </div>
             </div>
-            """,
-            unsafe_allow_html=True
-        )
+            """
+        ), unsafe_allow_html=True)
 
 
 def section_header(icon, title, description=""):
-    st.markdown(
+    st.markdown(textwrap.dedent(
         f"""
         <div class="section-title">
             <div class="section-icon">{icon}</div>
             <div class="section-name">{title}</div>
         </div>
         {"<div class='section-desc'>" + description + "</div>" if description else ""}
-        """,
-        unsafe_allow_html=True
-    )
+        """
+    ), unsafe_allow_html=True)
 
 
 def achievement_card(title, text, gold=False):
     extra_class = "gold" if gold else ""
-    st.markdown(
+    st.markdown(textwrap.dedent(
         f"""
         <div class="achievement {extra_class}">
             <strong>{title}</strong>
             <p>{text}</p>
         </div>
-        """,
-        unsafe_allow_html=True
-    )
+        """
+    ), unsafe_allow_html=True)
 
 
 def initials(name):
@@ -767,14 +764,14 @@ def member_section(title, members):
 
     html += "</div>"
 
-    st.markdown(html, unsafe_allow_html=True)
+    st.markdown(textwrap.dedent(html), unsafe_allow_html=True)
 
 
 # ============================================================
 # HERO
 # ============================================================
 
-st.markdown(
+st.markdown(textwrap.dedent(
     """
     <div class="hero">
         <div class="hero-content">
@@ -807,9 +804,8 @@ st.markdown(
             <div class="rig"></div>
         </div>
     </div>
-    """,
-    unsafe_allow_html=True
-)
+    """
+), unsafe_allow_html=True)
 
 # ============================================================
 # TABS
@@ -836,7 +832,7 @@ with tab1:
         "A student-driven platform connecting petroleum education, industry exposure and innovation."
     )
 
-    st.markdown(
+    st.markdown(textwrap.dedent(
         """
         <div class="info-card">
             <div class="info-card-title">
@@ -857,15 +853,14 @@ with tab1:
                 <span class="tag">Leadership</span>
             </div>
         </div>
-        """,
-        unsafe_allow_html=True
-    )
+        """
+    ), unsafe_allow_html=True)
 
     # --------------------------------------------------------
     # KPI SECTION
     # --------------------------------------------------------
 
-    st.markdown(
+    st.markdown(textwrap.dedent(
         """
         <div class="kpi-grid">
 
@@ -894,9 +889,8 @@ with tab1:
             </div>
 
         </div>
-        """,
-        unsafe_allow_html=True
-    )
+        """
+    ), unsafe_allow_html=True)
 
     # --------------------------------------------------------
     # FOCUS AREAS
@@ -911,7 +905,7 @@ with tab1:
     focus1, focus2, focus3, focus4 = st.columns(4)
 
     with focus1:
-        st.markdown(
+        st.markdown(textwrap.dedent(
             """
             <div class="info-card">
                 <div style="font-size:1.8rem;">🎓</div>
@@ -921,12 +915,11 @@ with tab1:
                     certifications, competitions and academic initiatives.
                 </div>
             </div>
-            """,
-            unsafe_allow_html=True
-        )
+            """
+        ), unsafe_allow_html=True)
 
     with focus2:
-        st.markdown(
+        st.markdown(textwrap.dedent(
             """
             <div class="info-card">
                 <div style="font-size:1.8rem;">🏭</div>
@@ -936,12 +929,11 @@ with tab1:
                     energy and industrial operations.
                 </div>
             </div>
-            """,
-            unsafe_allow_html=True
-        )
+            """
+        ), unsafe_allow_html=True)
 
     with focus3:
-        st.markdown(
+        st.markdown(textwrap.dedent(
             """
             <div class="info-card">
                 <div style="font-size:1.8rem;">🔬</div>
@@ -951,12 +943,11 @@ with tab1:
                     patents and emerging technologies.
                 </div>
             </div>
-            """,
-            unsafe_allow_html=True
-        )
+            """
+        ), unsafe_allow_html=True)
 
     with focus4:
-        st.markdown(
+        st.markdown(textwrap.dedent(
             """
             <div class="info-card">
                 <div style="font-size:1.8rem;">🌱</div>
@@ -966,13 +957,12 @@ with tab1:
                     sustainability and community engagement.
                 </div>
             </div>
-            """,
-            unsafe_allow_html=True
-        )
+            """
+        ), unsafe_allow_html=True)
 
     st.markdown("<br>", unsafe_allow_html=True)
 
-    st.markdown(
+    st.markdown(textwrap.dedent(
         """
         <div class="admin-note">
             💡 <strong>Admin Note:</strong>
@@ -980,9 +970,8 @@ with tab1:
             edit the corresponding sections of <code>app.py</code>
             and commit the changes to GitHub.
         </div>
-        """,
-        unsafe_allow_html=True
-    )
+        """
+    ), unsafe_allow_html=True)
 
 
 # ============================================================
@@ -1051,7 +1040,7 @@ with tab2:
         "Student-led ideas aimed at solving existing energy and engineering challenges."
     )
 
-    st.markdown(
+    st.markdown(textwrap.dedent(
         """
         <div class="info-card">
             <div class="info-card-title">
@@ -1073,9 +1062,8 @@ with tab2:
                 Status: To be updated.
             </div>
         </div>
-        """,
-        unsafe_allow_html=True
-    )
+        """
+    ), unsafe_allow_html=True)
 
     st.divider()
 
@@ -1186,14 +1174,13 @@ with tab2:
 
     for col, (title, path, caption) in zip(columns, social_data):
         with col:
-            st.markdown(
+            st.markdown(textwrap.dedent(
                 f"""
                 <div class="info-card-title" style="margin-bottom:8px;">
                     {title}
                 </div>
-                """,
-                unsafe_allow_html=True
-            )
+                """
+            ), unsafe_allow_html=True)
             load_image(path, caption)
 
     st.divider()
@@ -1208,7 +1195,7 @@ with tab2:
         "Clear communication, structured delivery and effective response to jury questions."
     )
 
-    st.markdown(
+    st.markdown(textwrap.dedent(
         """
         <div class="info-card">
             <div class="info-card-title">
@@ -1232,9 +1219,8 @@ with tab2:
                 Status: To be updated.
             </div>
         </div>
-        """,
-        unsafe_allow_html=True
-    )
+        """
+    ), unsafe_allow_html=True)
 
 
 # ============================================================
@@ -1349,7 +1335,7 @@ with tab3:
 
 with tab4:
 
-    st.markdown(
+    st.markdown(textwrap.dedent(
         """
         <div class="rd-banner">
             <h3>🔬 Research & Development Cell</h3>
@@ -1366,9 +1352,8 @@ with tab4:
             <span class="rd-chip">Technical Projects</span>
             <span class="rd-chip">Interdisciplinary Work</span>
         </div>
-        """,
-        unsafe_allow_html=True
-    )
+        """
+    ), unsafe_allow_html=True)
 
     rd1, rd2 = st.columns(2, gap="large")
 
@@ -1406,7 +1391,7 @@ with tab4:
     v1, v2, v3 = st.columns(3)
 
     with v1:
-        st.markdown(
+        st.markdown(textwrap.dedent(
             """
             <div class="info-card">
                 <div style="font-size:1.7rem;">🧠</div>
@@ -1417,12 +1402,11 @@ with tab4:
                     sound solutions.
                 </div>
             </div>
-            """,
-            unsafe_allow_html=True
-        )
+            """
+        ), unsafe_allow_html=True)
 
     with v2:
-        st.markdown(
+        st.markdown(textwrap.dedent(
             """
             <div class="info-card">
                 <div style="font-size:1.7rem;">⚙️</div>
@@ -1433,12 +1417,11 @@ with tab4:
                     energy disciplines.
                 </div>
             </div>
-            """,
-            unsafe_allow_html=True
-        )
+            """
+        ), unsafe_allow_html=True)
 
     with v3:
-        st.markdown(
+        st.markdown(textwrap.dedent(
             """
             <div class="info-card">
                 <div style="font-size:1.7rem;">🏆</div>
@@ -1448,16 +1431,15 @@ with tab4:
                     patents, competitions and industry-relevant solutions.
                 </div>
             </div>
-            """,
-            unsafe_allow_html=True
-        )
+            """
+        ), unsafe_allow_html=True)
 
 
 # ============================================================
 # FOOTER
 # ============================================================
 
-st.markdown(
+st.markdown(textwrap.dedent(
     """
     <div class="footer">
         <strong>FIPI Dibrugarh University Student Chapter</strong>
@@ -1466,6 +1448,5 @@ st.markdown(
         <br><br>
         Petroleum Engineering • Research • Industry • Innovation
     </div>
-    """,
-    unsafe_allow_html=True
-)
+    """
+), unsafe_allow_html=True)
