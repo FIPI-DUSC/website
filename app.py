@@ -362,7 +362,7 @@ with tab3:
     with col_right:
         member_section("Creative & Outreach", [("Ipsita Deka", "Designing Chief"), ("Nibirh Hazarika", "Designing Chief"), ("Biswajit Rajkhowa", "Designing Head"), ("Tusti Chetia", "Designing Head"), ("Jayed Hazarika", "Membership Head"), ("Abhraneil Boruah", "Membership Head")])
         member_section("Industry, Technology & Culture", [("Pratiksha Sonowal", "Industrial & Communication Chairperson"), ("Roshan Kar", "Industrial & Communication Chairperson"), ("Pankita Priyam Sarma", "Industrial & Communication Chairperson"), ("Arindom Gogoi", "Technical Head"), ("Shubharaj Sonowal", "Technical Head"), ("Devleena Kalita", "Cultural Head"), ("Manash Pratim Phukan", "Cultural Head")])
-        member_section("Events, Media & Promotions", [("Anisha Rahman", "Event Management Head"),, ("Debashish Sharma", "Event Management Head"), ("Trishna Pegu", "Social Media Manager"), ("Urmi Ghosh", "Social Media Manager"), ("Anurag Thakur", "Marketing Head"), ("Archan Nath", "Marketing Head")])
+        member_section("Events, Media & Promotions", [("Anisha Rahman", "Event Management Head"), ("Debashish Sharma", "Event Management Head"), ("Trishna Pegu", "Social Media Manager"), ("Urmi Ghosh", "Social Media Manager"), ("Anurag Thakur", "Marketing Head"), ("Archan Nath", "Marketing Head")])
 
 # ============================================================
 # R&D CELL
