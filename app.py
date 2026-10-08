@@ -19,7 +19,7 @@ def render(html_str):
     st.markdown(cleaned_html, unsafe_allow_html=True)
 
 # ============================================================
-# HIGH CONTRAST PROFESSIONAL CSS (FIXED TAB TEXT COLOR)
+# PROFESSIONAL CSS WITH BACKGROUND WATERMARK IMAGE
 # ============================================================
 render("""
 <style>
@@ -41,8 +41,14 @@ render("""
         font-family: 'Inter', sans-serif;
     }
 
+    /* Background Watermark with Transparent Overlay */
     .stApp {
-        background-color: var(--bg-gray);
+        background: 
+            linear-gradient(rgba(241, 245, 249, 0.93), rgba(241, 245, 249, 0.93)),
+            url('https://raw.githubusercontent.com/FIPI-DUSC/website/main/images/du_gate.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
         color: var(--text-main);
     }
 
@@ -164,7 +170,7 @@ render("""
         background: rgba(15, 118, 110, 0.2); border-radius: 4px; font-size: 0.8rem; font-weight: 700; color: #CCFBF1; text-transform: uppercase;
     }
 
-    /* TABS - HIGH CONTRAST FIX */
+    /* TABS */
     .stTabs [data-baseweb="tab-list"] {
         gap: 10px; background: #E2E8F0; padding: 8px; border-radius: 8px; border: 1px solid var(--border-color);
     }
@@ -312,7 +318,7 @@ with tab2:
         with img1: load_image("images/patent.jpg", "Patent Publication")
         with img2: load_image("images/geonova.jpg", "Geonova Competition")
 
-    # INDUSTRY ORIENTATION (Updated to point to oil_visit.png)
+    # INDUSTRY ORIENTATION
     section_header("🏭", "Industry Orientation", "Hands-on exposure to operating facilities and petroleum professionals.")
     c_i1, c_i2 = st.columns([1.7, 1], gap="large")
     with c_i1:
@@ -356,7 +362,7 @@ with tab3:
     with col_right:
         member_section("Creative & Outreach", [("Ipsita Deka", "Designing Chief"), ("Nibirh Hazarika", "Designing Chief"), ("Biswajit Rajkhowa", "Designing Head"), ("Tusti Chetia", "Designing Head"), ("Jayed Hazarika", "Membership Head"), ("Abhraneil Boruah", "Membership Head")])
         member_section("Industry, Technology & Culture", [("Pratiksha Sonowal", "Industrial & Communication Chairperson"), ("Roshan Kar", "Industrial & Communication Chairperson"), ("Pankita Priyam Sarma", "Industrial & Communication Chairperson"), ("Arindom Gogoi", "Technical Head"), ("Shubharaj Sonowal", "Technical Head"), ("Devleena Kalita", "Cultural Head"), ("Manash Pratim Phukan", "Cultural Head")])
-        member_section("Events, Media & Promotions", [("Anisha Rahman", "Event Management Head"), ("Debashish Sharma", "Event Management Head"), ("Trishna Pegu", "Social Media Manager"), ("Urmi Ghosh", "Social Media Manager"), ("Anurag Thakur", "Marketing Head"), ("Archan Nath", "Marketing Head")])
+        member_section("Events, Media & Promotions", [("Anisha Rahman", "Event Management Head"),, ("Debashish Sharma", "Event Management Head"), ("Trishna Pegu", "Social Media Manager"), ("Urmi Ghosh", "Social Media Manager"), ("Anurag Thakur", "Marketing Head"), ("Archan Nath", "Marketing Head")])
 
 # ============================================================
 # R&D CELL
