@@ -15,23 +15,22 @@ st.set_page_config(
 # SAFE HTML RENDERER
 # ============================================================
 def render(html_str):
-    """Safely strips spaces to prevent Streamlit from creating raw code blocks."""
     cleaned_html = "\n".join(line.strip() for line in html_str.split("\n") if line.strip())
     st.markdown(cleaned_html, unsafe_allow_html=True)
 
 # ============================================================
-# HIGH CONTRAST PROFESSIONAL CSS
+# HIGH CONTRAST PROFESSIONAL CSS (FIXED TAB TEXT COLOR)
 # ============================================================
 render("""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
     :root {
-        --navy: #0F172A;        /* Deep Slate Navy */
+        --navy: #0F172A;
         --navy-light: #1E293B;  
-        --teal: #0F766E;        /* Industrial Teal */
-        --gold: #EA580C;        /* Sharp Corporate Orange/Gold */
-        --bg-gray: #F1F5F9;     /* Cool Gray for high contrast background */
+        --teal: #0F766E;
+        --gold: #EA580C;
+        --bg-gray: #F1F5F9;
         --white: #FFFFFF;
         --text-main: #0F172A;
         --text-muted: #475569;
@@ -42,7 +41,6 @@ render("""
         font-family: 'Inter', sans-serif;
     }
 
-    /* High contrast background */
     .stApp {
         background-color: var(--bg-gray);
         color: var(--text-main);
@@ -97,7 +95,7 @@ render("""
     .section-name { margin: 0; font-size: 1.6rem; font-weight: 800; color: var(--navy); text-transform: uppercase; letter-spacing: -0.5px;}
     .section-desc { margin: 0 0 25px 0; color: var(--text-muted); font-size: 0.95rem; font-weight: 500;}
 
-    /* KPI CARDS (Top Stats) */
+    /* KPI CARDS */
     .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin: 15px 0 35px 0; }
     .kpi-card {
         background: var(--white); border: 1px solid var(--border-color); border-left: 6px solid var(--gold);
@@ -119,7 +117,7 @@ render("""
         background: #F1F5F9; border: 1px solid var(--border-color); color: var(--navy); font-size: 0.75rem; font-weight: 700;
     }
 
-    /* ACHIEVEMENT CARDS (For text inside tabs) */
+    /* ACHIEVEMENT CARDS */
     .achievement {
         background: var(--white); border: 1px solid var(--border-color); border-left: 5px solid var(--teal);
         border-radius: 6px; padding: 20px; margin-bottom: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.02);
@@ -166,12 +164,12 @@ render("""
         background: rgba(15, 118, 110, 0.2); border-radius: 4px; font-size: 0.8rem; font-weight: 700; color: #CCFBF1; text-transform: uppercase;
     }
 
-    /* TABS */
+    /* TABS - HIGH CONTRAST FIX */
     .stTabs [data-baseweb="tab-list"] {
-        gap: 10px; background: var(--border-color); padding: 5px; border-radius: 8px;
+        gap: 10px; background: #E2E8F0; padding: 8px; border-radius: 8px; border: 1px solid var(--border-color);
     }
     .stTabs [data-baseweb="tab"] {
-        height: 45px; padding: 0 20px; border-radius: 6px; color: var(--navy); font-weight: 700; background: var(--white); border: 1px solid transparent;
+        height: 48px; padding: 0 24px; border-radius: 6px; color: #0F172A !important; font-weight: 800; background: var(--white); border: 1px solid var(--border-color);
     }
     .stTabs [aria-selected="true"] {
         background: var(--navy) !important; color: white !important; border-color: var(--navy);
@@ -273,9 +271,9 @@ with tab1:
     render("""
     <div class="kpi-grid">
         <div class="kpi-card"><div class="kpi-icon">🏆</div><div class="kpi-number">7</div><div class="kpi-label">IADC Well-Sharp Achievers</div></div>
-        <div class="kpi-card"><div class="kpi-card" style="border:none; padding:0; box-shadow:none;"><div class="kpi-icon">🎯</div><div class="kpi-number">2</div><div class="kpi-label">OIL Placements</div></div></div>
-        <div class="kpi-card"><div class="kpi-card" style="border:none; padding:0; box-shadow:none;"><div class="kpi-icon">🔬</div><div class="kpi-number">1</div><div class="kpi-label">Patent Published</div></div></div>
-        <div class="kpi-card"><div class="kpi-card" style="border:none; padding:0; box-shadow:none;"><div class="kpi-icon">🌱</div><div class="kpi-number">4+</div><div class="kpi-label">Social Initiatives</div></div></div>
+        <div class="kpi-card"><div class="kpi-icon">🎯</div><div class="kpi-number">2</div><div class="kpi-label">OIL Placements</div></div>
+        <div class="kpi-card"><div class="kpi-icon">🔬</div><div class="kpi-number">1</div><div class="kpi-label">Patent Published</div></div>
+        <div class="kpi-card"><div class="kpi-icon">🌱</div><div class="kpi-number">4+</div><div class="kpi-label">Social Initiatives</div></div>
     </div>
     """)
 
@@ -314,13 +312,13 @@ with tab2:
         with img1: load_image("images/patent.jpg", "Patent Publication")
         with img2: load_image("images/geonova.jpg", "Geonova Competition")
 
-    # INDUSTRY ORIENTATION
+    # INDUSTRY ORIENTATION (Updated to point to oil_visit.png)
     section_header("🏭", "Industry Orientation", "Hands-on exposure to operating facilities and petroleum professionals.")
     c_i1, c_i2 = st.columns([1.7, 1], gap="large")
     with c_i1:
         achievement_card("Industrial Visit to OIL, Duliajan", "4th-semester B.Tech students visited the Water Supply Station (WSS) and Air Liquefaction Plant (ALP) on 7th May 2026.")
         achievement_card("Well Logging Department Visit", "2nd-semester M.Tech students undertook a one-day visit to the Well Logging Department of OIL on 28th April 2026 under Project SHARE, interacting with officials across Cased Hole, Open Hole, and Interpretation Sections.")
-    with c_i2: load_image("images/oil_visit.jpg", "Industrial Visit to Oil India Limited")
+    with c_i2: load_image("images/oil_visit.png", "Industrial Visit to Oil India Limited")
 
     # SOCIAL ACTIVITIES
     section_header("🤝", "Social Activities & Outreach", "Community engagement and sustainability initiatives.")
